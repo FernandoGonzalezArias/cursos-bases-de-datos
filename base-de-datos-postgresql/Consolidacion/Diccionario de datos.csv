@@ -1,0 +1,87 @@
+tabla_nombre;columna_nombre;columna_defecto;columna_nulo;columna_tipo_dato;columna_longitud;columna_descripcion;columna_dominio
+actor;last_name;NULL;NO;character varying;45;NULL;NULL
+actor;first_name;NULL;NO;character varying;45;NULL;NULL
+actor;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+actor;actor_id;nextval('actor_actor_id_seq'::regclass);NO;integer;32;NULL;NULL
+address;address_id;nextval('address_address_id_seq'::regclass);NO;integer;32;NULL;NULL
+address;city_id;NULL;NO;smallint;16;NULL;NULL
+address;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+address;address;NULL;NO;character varying;50;NULL;NULL
+address;address2;NULL;YES;character varying;50;NULL;NULL
+address;district;NULL;NO;character varying;20;NULL;NULL
+address;postal_code;NULL;YES;character varying;10;NULL;NULL
+address;phone;NULL;NO;character varying;20;NULL;NULL
+category;name;NULL;NO;character varying;25;NULL;NULL
+category;category_id;nextval('category_category_id_seq'::regclass);NO;integer;32;NULL;NULL
+category;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+city;country_id;NULL;NO;smallint;16;NULL;NULL
+city;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+city;city;NULL;NO;character varying;50;NULL;NULL
+city;city_id;nextval('city_city_id_seq'::regclass);NO;integer;32;NULL;NULL
+country;country;NULL;NO;character varying;50;NULL;NULL
+country;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+country;country_id;nextval('country_country_id_seq'::regclass);NO;integer;32;NULL;NULL
+customer;last_name;NULL;NO;character varying;45;NULL;NULL
+customer;email;NULL;YES;character varying;50;NULL;NULL
+customer;customer_id;nextval('customer_customer_id_seq'::regclass);NO;integer;32;NULL;NULL
+customer;store_id;NULL;NO;smallint;16;NULL;NULL
+customer;address_id;NULL;NO;smallint;16;NULL;NULL
+customer;activebool;true;NO;boolean;NULL;NULL;NULL
+customer;last_update;now();YES;timestamp without time zone;NULL;NULL;NULL
+customer;create_date;('now'::text)::date;NO;date;NULL;NULL;NULL
+customer;active;NULL;YES;integer;32;NULL;NULL
+customer;first_name;NULL;NO;character varying;45;NULL;NULL
+film;film_id;nextval('film_film_id_seq'::regclass);NO;integer;32;NULL;NULL
+film;language_id;NULL;NO;smallint;16;NULL;NULL
+film;rental_duration;3;NO;smallint;16;NULL;NULL
+film;rental_rate;4.99;NO;numeric;4;NULL;NULL
+film;length;NULL;YES;smallint;16;NULL;NULL
+film;replacement_cost;19.99;NO;numeric;5;NULL;NULL
+film;rating;'G'::mpaa_rating;YES;USER-DEFINED;NULL;NULL;NULL
+film;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+film;title;NULL;NO;character varying;255;NULL;NULL
+film;description;NULL;YES;text;NULL;NULL;NULL
+film;special_features;NULL;YES;ARRAY;NULL;NULL;NULL
+film;fulltext;NULL;NO;tsvector;NULL;NULL;NULL
+film;release_year;NULL;YES;integer;32;NULL;year
+film_actor;actor_id;NULL;NO;smallint;16;NULL;NULL
+film_actor;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+film_actor;film_id;NULL;NO;smallint;16;NULL;NULL
+film_category;film_id;NULL;NO;smallint;16;NULL;NULL
+film_category;category_id;NULL;NO;smallint;16;NULL;NULL
+film_category;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+inventory;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+inventory;film_id;NULL;NO;smallint;16;NULL;NULL
+inventory;store_id;NULL;NO;smallint;16;NULL;NULL
+inventory;inventory_id;nextval('inventory_inventory_id_seq'::regclass);NO;integer;32;NULL;NULL
+language;name;NULL;NO;character;20;NULL;NULL
+language;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+language;language_id;nextval('language_language_id_seq'::regclass);NO;integer;32;NULL;NULL
+payment;customer_id;NULL;NO;smallint;16;NULL;NULL
+payment;payment_id;nextval('payment_payment_id_seq'::regclass);NO;integer;32;NULL;NULL
+payment;rental_id;NULL;NO;integer;32;NULL;NULL
+payment;amount;NULL;NO;numeric;5;NULL;NULL
+payment;payment_date;NULL;NO;timestamp without time zone;NULL;NULL;NULL
+payment;staff_id;NULL;NO;smallint;16;NULL;NULL
+rental;customer_id;NULL;NO;smallint;16;NULL;NULL
+rental;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+rental;staff_id;NULL;NO;smallint;16;NULL;NULL
+rental;return_date;NULL;YES;timestamp without time zone;NULL;NULL;NULL
+rental;inventory_id;NULL;NO;integer;32;NULL;NULL
+rental;rental_date;NULL;NO;timestamp without time zone;NULL;NULL;NULL
+rental;rental_id;nextval('rental_rental_id_seq'::regclass);NO;integer;32;NULL;NULL
+staff;active;true;NO;boolean;NULL;NULL;NULL
+staff;store_id;NULL;NO;smallint;16;NULL;NULL
+staff;address_id;NULL;NO;smallint;16;NULL;NULL
+staff;staff_id;nextval('staff_staff_id_seq'::regclass);NO;integer;32;NULL;NULL
+staff;username;NULL;NO;character varying;16;NULL;NULL
+staff;password;NULL;YES;character varying;40;NULL;NULL
+staff;last_name;NULL;NO;character varying;45;NULL;NULL
+staff;picture;NULL;YES;bytea;NULL;NULL;NULL
+staff;first_name;NULL;NO;character varying;45;NULL;NULL
+staff;email;NULL;YES;character varying;50;NULL;NULL
+staff;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
+store;store_id;nextval('store_store_id_seq'::regclass);NO;integer;32;NULL;NULL
+store;manager_staff_id;NULL;NO;smallint;16;NULL;NULL
+store;address_id;NULL;NO;smallint;16;NULL;NULL
+store;last_update;now();NO;timestamp without time zone;NULL;NULL;NULL
